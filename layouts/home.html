@@ -1,0 +1,287 @@
+{{ define "main" }}
+  {{ with .Params.banner }}
+    <section class="portfolio-hero section pt-14">
+      <div class="container">
+        <div class="row items-center justify-between">
+          <div class="lg:col-6 mb-10 lg:mb-0">
+            {{ with .eyebrow }}
+              <p class="portfolio-eyebrow mb-4">{{ . }}</p>
+            {{ end }}
+            <h1 class="mb-4 text-h3 lg:text-h1">
+              {{ .title | markdownify }}
+            </h1>
+            <p class="portfolio-subtitle mb-3">
+              {{ .subtitle | markdownify }}
+              {{ with .company_logo }}
+                <img class="portfolio-company-logo" src="{{ .src | safeURL }}" alt="{{ .alt }}" loading="eager" decoding="async">
+              {{ end }}
+            </p>
+            <p class="mb-6 text-lg">
+              {{ .content | markdownify }}
+            </p>
+            {{ with .location }}
+              <p class="portfolio-location mb-8">
+                <i class="fa-solid fa-location-dot"></i>
+                {{ . }}
+              </p>
+            {{ end }}
+            <div class="portfolio-actions">
+              {{ with .button }}
+                {{ if .enable }}
+                  <a class="btn btn-primary" href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    {{ .label }}
+                  </a>
+                {{ end }}
+              {{ end }}
+              {{ with .secondary_button }}
+                {{ if .enable }}
+                  <a class="btn btn-outline-primary" href="{{ .link | safeURL }}">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    {{ .label }}
+                  </a>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+          <div class="lg:col-5">
+            <div class="portfolio-portrait">
+              {{ partial "image" (dict "Src" .image "Alt" "Worajedt Sitthidumrong profile portrait" "Loading" "eager" "Class" "w-full" "DisplayXL" "720x" "DisplayLG" "620x" "DisplayMD" "540x") }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Params.metrics }}
+    <section class="section-sm pt-0">
+      <div class="container">
+        <div class="portfolio-metrics">
+          {{ range . }}
+            <div class="portfolio-metric">
+              <strong>{{ .value }}</strong>
+              <span>{{ .label }}</span>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ range $i, $e := .Params.features }}
+    <section id="{{ .id }}" class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+      <div class="container">
+        <div class="row items-center justify-between">
+          <div class="{{ if not (modBool $i 2) }}md:order-2{{ end }} md:col-5 mb-6 md:mb-0">
+            {{ partial "image" (dict "Src" .image "Alt" .title "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+            {{ with .image_credit }}
+              <p class="portfolio-image-credit">
+                <a href="{{ .url | safeURL }}" target="_blank" rel="noopener">{{ .text }}</a>
+              </p>
+            {{ end }}
+          </div>
+          <div class="{{ if not (modBool $i 2) }}md:order-1{{ end }} md:col-7 lg:col-6">
+            <h2 class="mb-4">{{ .title | markdownify }}</h2>
+            <p class="mb-8 text-lg">{{ .content | markdownify }}</p>
+            <ul>
+              {{ range .bulletpoints }}
+                <li class="relative mb-4 pl-6">
+                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                  {{ . | markdownify }}
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Params.github }}
+    <section id="github" class="portfolio-github section-sm" data-github-widget data-github-user="{{ .username }}">
+      <div class="container">
+        <div class="row items-start justify-between">
+          <div class="lg:col-4 mb-10 lg:mb-0">
+            {{ with .eyebrow }}
+              <p class="portfolio-eyebrow mb-4">{{ . }}</p>
+            {{ end }}
+            <h2 class="mb-4">{{ .title }}</h2>
+            <p class="mb-6 text-lg">{{ .intro }}</p>
+            <a class="btn btn-outline-primary" href="{{ .profile_url | safeURL }}" target="_blank" rel="noopener">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              github.com/{{ .username }}
+            </a>
+          </div>
+          <div class="lg:col-8">
+            <div class="github-terminal">
+              <div class="github-terminal-bar">
+                <span></span><span></span><span></span>
+                <code>~/github/{{ .username }} --public-activity</code>
+              </div>
+              <div class="github-terminal-body">
+                <div class="github-command-line">
+                  <span>$</span>
+                  <code>curl api.github.com/users/{{ .username }}/events/public</code>
+                </div>
+                <div class="github-stats" aria-label="GitHub public account statistics">
+                  <div>
+                    <strong data-github-stat="repos">{{ .fallback_stats.repos }}</strong>
+                    <span>public repos</span>
+                  </div>
+                  <div>
+                    <strong data-github-stat="gists">{{ .fallback_stats.gists }}</strong>
+                    <span>public gists</span>
+                  </div>
+                  <div>
+                    <strong data-github-stat="followers">{{ .fallback_stats.followers }}</strong>
+                    <span>followers</span>
+                  </div>
+                  <div>
+                    <strong data-github-stat="since">{{ .fallback_stats.since }}</strong>
+                    <span>on GitHub since</span>
+                  </div>
+                </div>
+
+                <div class="github-widget-status" data-github-status>
+                  fetching public GitHub signal...
+                </div>
+
+                <div class="github-heatmap-shell">
+                  <div class="github-section-title">
+                    <span>account-wide public activity</span>
+                    <small data-github-activity-summary>waiting for public event stream</small>
+                  </div>
+                  <div class="github-heatmap-wrap">
+                    <div class="github-months" data-github-months></div>
+                    <div class="github-heatmap-body">
+                      <div class="github-weekdays">
+                        <span></span>
+                        <span>Mon</span>
+                        <span></span>
+                        <span>Wed</span>
+                        <span></span>
+                        <span>Fri</span>
+                        <span></span>
+                      </div>
+                      <div class="github-heatmap" data-github-activity aria-label="GitHub public activity heatmap"></div>
+                    </div>
+                    <div class="github-legend" aria-hidden="true">
+                      <span>Less</span>
+                      <i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i>
+                      <span>More</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="github-live-grid">
+                  <div>
+                    <div class="github-section-title">
+                      <span>repo highlights</span>
+                      <small>compact public sample</small>
+                    </div>
+                    <div class="github-repo-list" data-github-repos>
+                      {{ range first 3 .highlight_repos }}
+                        <a class="github-repo-row" href="{{ .url | safeURL }}" target="_blank" rel="noopener">
+                          <span>
+                            <strong>{{ .name }}</strong>
+                            <small class="github-repo-meta">{{ .language }}</small>
+                          </span>
+                          <em>{{ .language }}</em>
+                        </a>
+                      {{ end }}
+                    </div>
+                  </div>
+                  <div>
+                    <div class="github-section-title">
+                      <span>public event mix</span>
+                      <small>all returned activity</small>
+                    </div>
+                    <div class="github-event-list" data-github-events>
+                      <div class="github-event-row">
+                        <span>pushes</span>
+                        <b style="--value: 70%"></b>
+                      </div>
+                      <div class="github-event-row">
+                        <span>pull requests</span>
+                        <b style="--value: 48%"></b>
+                      </div>
+                      <div class="github-event-row">
+                        <span>issues</span>
+                        <b style="--value: 36%"></b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Params.photography }}
+    <section id="photography" class="portfolio-photography section">
+      <div class="container">
+        <div class="row items-center justify-between mb-14">
+          <div class="lg:col-5 mb-8 lg:mb-0">
+            {{ with .eyebrow }}
+              <p class="portfolio-eyebrow mb-4">{{ . }}</p>
+            {{ end }}
+            <h2 class="mb-4">{{ .title }}</h2>
+            <p class="mb-5 text-lg">{{ .intro }}</p>
+            <p class="photo-camera-note mb-6">{{ .camera_note }}</p>
+            <div class="photo-gear-list mb-8">
+              {{ range .gear }}
+                <span>{{ . }}</span>
+              {{ end }}
+            </div>
+            <a class="btn btn-outline-primary" href="{{ .profile_url | safeURL }}" target="_blank" rel="noopener">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+              View Instagram
+            </a>
+          </div>
+          <div class="lg:col-6">
+            {{ $cover := resources.Get (strings.TrimPrefix "/" .cover) }}
+            <a class="photo-cover" href="{{ .profile_url | safeURL }}" target="_blank" rel="noopener">
+              {{ if $cover }}
+                {{ $coverImage := $cover.Fill "1200x760 Center webp" }}
+                <img src="{{ $coverImage.RelPermalink }}" alt="{{ .cover_alt }}" loading="lazy" decoding="async" width="{{ $coverImage.Width }}" height="{{ $coverImage.Height }}">
+              {{ else }}
+                <img src="{{ .cover | relURL }}" alt="{{ .cover_alt }}" loading="lazy" decoding="async">
+              {{ end }}
+            </a>
+          </div>
+        </div>
+
+        <p class="photo-copyright">{{ .copyright }}</p>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Params.experience }}
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-8 text-center mb-12">
+            <h2 class="mb-4">Selected Experience</h2>
+            <p>Highlights from the LinkedIn resume, condensed for a first portfolio page.</p>
+          </div>
+        </div>
+        <div class="portfolio-timeline">
+          {{ range . }}
+            <article class="portfolio-timeline-item">
+              <p class="portfolio-period">{{ .period }}</p>
+              <h3>{{ .role }}</h3>
+              <p class="portfolio-company">{{ .company }} - {{ .location }}</p>
+              <p>{{ .summary }}</p>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ partial "call-to-action" . }}
+{{ end }}

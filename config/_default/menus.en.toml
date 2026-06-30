@@ -1,0 +1,46 @@
+############# English navigation ##############
+
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Healthcare"
+url = "/#healthcare"
+weight = 2
+
+[[main]]
+name = "GitHub"
+url = "/#github"
+weight = 3
+
+[[main]]
+name = "Photography"
+url = "/#photography"
+weight = 4
+
+[[main]]
+name = "Experience"
+url = "/#experience"
+weight = 5
+
+[[footer]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[footer]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/worajedt/"
+weight = 2
+
+[[footer]]
+name = "GitHub"
+url = "https://github.com/jedt3d"
+weight = 3
+
+[[footer]]
+name = "Instagram"
+url = "https://www.instagram.com/worajedt/"
+weight = 4

@@ -1,0 +1,659 @@
+html,
+body {
+  font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-secondary);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.btn {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.portfolio-logo {
+  color: var(--color-text-dark);
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.portfolio-logo span {
+  color: var(--color-primary);
+}
+
+.dark .portfolio-logo {
+  color: var(--color-darkmode-text-dark);
+}
+
+.portfolio-hero {
+  overflow: hidden;
+}
+
+.portfolio-eyebrow {
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-subtitle {
+  color: var(--color-text-dark);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600;
+}
+
+.portfolio-subtitle a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.portfolio-company-logo {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  display: inline-block;
+  height: 1.35em;
+  margin-left: 0.45rem;
+  padding: 0.12em 0.32em;
+  vertical-align: -0.25em;
+  width: auto;
+}
+
+.dark .portfolio-subtitle {
+  color: var(--color-darkmode-text-dark);
+}
+
+.portfolio-location {
+  align-items: center;
+  color: var(--color-text-light);
+  display: flex;
+  gap: 0.6rem;
+}
+
+.portfolio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.portfolio-portrait {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(16, 24, 32, 0.14);
+  overflow: hidden;
+}
+
+.dark .portfolio-portrait {
+  border-color: var(--color-darkmode-border);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-portrait img {
+  aspect-ratio: 5 / 4;
+  display: block;
+  object-fit: cover;
+  object-position: 42% 50%;
+  width: 100%;
+}
+
+.portfolio-image-credit {
+  color: var(--color-text-light);
+  font-size: 0.78rem;
+  margin-top: 0.6rem;
+  text-align: right;
+}
+
+.portfolio-image-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.portfolio-image-credit a:hover {
+  color: var(--color-primary);
+}
+
+.dark .portfolio-image-credit {
+  color: var(--color-darkmode-text-light);
+}
+
+.portfolio-metrics {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+}
+
+.portfolio-metric {
+  background: var(--color-light);
+  min-height: 150px;
+  padding: 1.5rem;
+}
+
+.dark .portfolio-metric {
+  background: var(--color-darkmode-light);
+}
+
+.portfolio-metric strong {
+  color: var(--color-primary);
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-metric span {
+  color: var(--color-text);
+  display: block;
+}
+
+.dark .portfolio-metric span {
+  color: var(--color-darkmode-text);
+}
+
+.portfolio-timeline {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0 auto;
+  max-width: 940px;
+}
+
+.portfolio-timeline-item {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.dark .portfolio-timeline-item {
+  border-color: var(--color-darkmode-border);
+}
+
+.portfolio-timeline-item h3 {
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  margin-bottom: 0.35rem;
+}
+
+.portfolio-period {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.portfolio-company {
+  color: var(--color-text-light);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-photography {
+  overflow: hidden;
+}
+
+.photo-camera-note {
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-text-light);
+  padding-left: 1rem;
+}
+
+.dark .photo-camera-note {
+  color: var(--color-darkmode-text-light);
+}
+
+.photo-gear-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.photo-gear-list span {
+  background: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-dark);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+}
+
+.dark .photo-gear-list span {
+  background: var(--color-darkmode-light);
+  border-color: var(--color-darkmode-border);
+  color: var(--color-darkmode-text-dark);
+}
+
+.photo-cover {
+  border-radius: 8px;
+  display: block;
+  overflow: hidden;
+}
+
+.photo-cover img {
+  aspect-ratio: 30 / 19;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.photo-copyright {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  max-width: 940px;
+}
+
+.dark .photo-copyright {
+  color: var(--color-darkmode-text-light);
+}
+
+.portfolio-github {
+  background:
+    linear-gradient(180deg, rgba(6, 19, 23, 0.98), rgba(10, 25, 30, 0.96)),
+    repeating-linear-gradient(90deg, rgba(94, 234, 212, 0.05) 0 1px, transparent 1px 48px);
+  color: #d6fff5;
+  overflow: hidden;
+}
+
+.portfolio-github h2,
+.portfolio-github .portfolio-eyebrow {
+  color: #5eead4;
+}
+
+.portfolio-github p {
+  color: #b7cfc9;
+}
+
+.portfolio-github .btn-outline-primary {
+  border-color: rgba(94, 234, 212, 0.55);
+  color: #d6fff5;
+}
+
+.portfolio-github .btn-outline-primary:hover {
+  background: #5eead4;
+  color: #061317;
+}
+
+.github-terminal {
+  background: rgba(4, 12, 15, 0.92);
+  border: 1px solid rgba(94, 234, 212, 0.24);
+  border-radius: 8px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.github-terminal-bar {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(94, 234, 212, 0.18);
+  display: flex;
+  gap: 0.55rem;
+  padding: 0.85rem 1rem;
+}
+
+.github-terminal-bar span {
+  border-radius: 999px;
+  display: block;
+  height: 0.72rem;
+  width: 0.72rem;
+}
+
+.github-terminal-bar span:nth-child(1) {
+  background: #ff5f57;
+}
+
+.github-terminal-bar span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.github-terminal-bar span:nth-child(3) {
+  background: #28c840;
+}
+
+.github-terminal-bar code,
+.github-command-line code,
+.github-command-line span,
+.github-widget-status,
+.github-repo-row em,
+.github-section-title small,
+.github-language-row span,
+.github-event-row span {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.github-terminal-bar code {
+  color: #9af8e7;
+  font-size: 0.85rem;
+  margin-left: 0.4rem;
+}
+
+.github-terminal-body {
+  padding: 1.25rem;
+}
+
+.github-command-line {
+  align-items: center;
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.github-command-line span {
+  color: #5eead4;
+  font-weight: 700;
+}
+
+.github-command-line code {
+  color: #d6fff5;
+  font-size: 0.92rem;
+}
+
+.github-stats {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 1rem;
+}
+
+.github-stats div {
+  background: rgba(255, 255, 255, 0.045);
+  min-height: 94px;
+  padding: 1rem;
+}
+
+.github-stats strong {
+  color: #5eead4;
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  line-height: 1;
+  margin-bottom: 0.45rem;
+}
+
+.github-stats span {
+  color: #b7cfc9;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.github-widget-status {
+  border: 1px solid rgba(94, 234, 212, 0.18);
+  border-radius: 8px;
+  color: #9af8e7;
+  font-size: 0.82rem;
+  margin-bottom: 1.25rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.github-widget-status[data-state="offline"] {
+  border-color: rgba(255, 189, 46, 0.32);
+  color: #ffdb7c;
+}
+
+.github-section-title {
+  align-items: baseline;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.github-section-title span {
+  color: #f5fffc;
+  font-weight: 700;
+}
+
+.github-section-title small {
+  color: #78958f;
+  font-size: 0.78rem;
+}
+
+.github-heatmap-shell {
+  margin-bottom: 1.4rem;
+}
+
+.github-heatmap-wrap {
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+}
+
+.github-months {
+  display: grid;
+  grid-template-columns: repeat(var(--github-weeks, 26), 13px);
+  margin-left: 2.4rem;
+  min-width: max-content;
+}
+
+.github-months span {
+  color: #8fb2aa;
+  font-size: 0.72rem;
+  min-height: 1rem;
+}
+
+.github-heatmap-body {
+  display: flex;
+  gap: 0.6rem;
+  min-width: max-content;
+}
+
+.github-weekdays {
+  color: #8fb2aa;
+  display: grid;
+  font-size: 0.72rem;
+  gap: 3px;
+  grid-template-rows: repeat(7, 13px);
+  line-height: 13px;
+  width: 1.8rem;
+}
+
+.github-heatmap {
+  display: grid;
+  gap: 3px;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(var(--github-weeks, 26), 13px);
+  grid-template-rows: repeat(7, 13px);
+}
+
+.github-cell,
+.github-legend i {
+  background: #142226;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 3px;
+  display: block;
+  height: 13px;
+  width: 13px;
+}
+
+.github-cell[data-level="1"],
+.github-legend i[data-level="1"] {
+  background: #134e4a;
+}
+
+.github-cell[data-level="2"],
+.github-legend i[data-level="2"] {
+  background: #0f766e;
+}
+
+.github-cell[data-level="3"],
+.github-legend i[data-level="3"] {
+  background: #14b8a6;
+}
+
+.github-cell[data-level="4"],
+.github-legend i[data-level="4"] {
+  background: #5eead4;
+}
+
+.github-cell.is-future {
+  opacity: 0.35;
+}
+
+.github-legend {
+  align-items: center;
+  color: #8fb2aa;
+  display: flex;
+  gap: 0.38rem;
+  justify-content: flex-end;
+  margin-top: 0.65rem;
+  min-width: max-content;
+}
+
+.github-live-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr);
+}
+
+.github-repo-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.github-repo-row {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(94, 234, 212, 0.15);
+  border-radius: 8px;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  padding: 0.6rem 0.72rem;
+}
+
+.github-repo-row:hover {
+  border-color: rgba(94, 234, 212, 0.55);
+}
+
+.github-repo-row strong,
+.github-repo-row small {
+  display: block;
+}
+
+.github-repo-row strong {
+  color: #f5fffc;
+  margin-bottom: 0.05rem;
+}
+
+.github-repo-row small {
+  color: #a7c3bd;
+  font-size: 0.86rem;
+}
+
+.github-repo-meta {
+  color: #78958f !important;
+  margin-top: 0.1rem;
+}
+
+.github-repo-row em {
+  color: #5eead4;
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
+.github-language-list,
+.github-event-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.github-language-row,
+.github-event-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.github-language-row span,
+.github-event-row span {
+  color: #d6fff5;
+  display: flex;
+  font-size: 0.84rem;
+  justify-content: space-between;
+}
+
+.github-language-row small,
+.github-event-row small {
+  color: #78958f;
+}
+
+.github-language-row b,
+.github-event-row b {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  display: block;
+  height: 0.48rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.github-language-row b::after,
+.github-event-row b::after {
+  background: linear-gradient(90deg, #0f766e, #5eead4);
+  border-radius: inherit;
+  content: "";
+  display: block;
+  height: 100%;
+  width: var(--value, 20%);
+}
+
+@media (max-width: 991px) {
+  .portfolio-metrics,
+  .github-stats,
+  .github-live-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 575px) {
+  .portfolio-actions,
+  .portfolio-location {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .portfolio-actions .btn {
+    text-align: center;
+  }
+
+  .portfolio-metrics,
+  .github-stats,
+  .github-live-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .github-terminal-body {
+    padding: 1rem;
+  }
+
+  .github-section-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .github-repo-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}

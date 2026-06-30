@@ -1,0 +1,24 @@
+{
+  "main": [
+    {
+      "name": "github",
+      "icon": "fab fa-github",
+      "link": "https://github.com/jedt3d"
+    },
+    {
+      "name": "linkedin",
+      "icon": "fab fa-linkedin",
+      "link": "https://www.linkedin.com/in/worajedt/"
+    },
+    {
+      "name": "instagram",
+      "icon": "fab fa-instagram",
+      "link": "https://www.instagram.com/worajedt/"
+    },
+    {
+      "name": "email",
+      "icon": "fa-solid fa-envelope",
+      "link": "mailto:sjedt@3ddaily.com"
+    }
+  ]
+}
