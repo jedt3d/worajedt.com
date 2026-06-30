@@ -645,8 +645,27 @@ samp {
 }
 
 @media (max-width: 575px) {
-  .portfolio-actions,
+  .portfolio-hero .portfolio-eyebrow {
+    font-size: 0.7rem;
+    line-height: 1.65;
+    letter-spacing: 0.055em;
+  }
+
   .portfolio-location {
+    align-items: baseline;
+    flex-direction: row;
+    font-size: 0.8rem;
+    gap: 0.45rem;
+    line-height: 1.45;
+  }
+
+  .portfolio-location i {
+    flex: 0 0 auto;
+    font-size: 0.9em;
+    line-height: 1;
+  }
+
+  .portfolio-actions {
     align-items: stretch;
     flex-direction: column;
   }
