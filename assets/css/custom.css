@@ -645,6 +645,19 @@ samp {
 }
 
 @media (max-width: 575px) {
+  .section,
+  .section-sm {
+    padding-top: 10px;
+  }
+
+  .portfolio-hero.section.pt-14 {
+    padding-top: 0 !important;
+  }
+
+  .portfolio-hero {
+    text-align: center;
+  }
+
   .portfolio-hero .portfolio-eyebrow {
     font-size: 0.7rem;
     line-height: 1.65;
@@ -656,6 +669,7 @@ samp {
     flex-direction: row;
     font-size: 0.8rem;
     gap: 0.45rem;
+    justify-content: center;
     line-height: 1.45;
   }
 
@@ -678,6 +692,24 @@ samp {
   .github-stats,
   .github-live-grid {
     grid-template-columns: 1fr;
+  }
+
+  .portfolio-metric {
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: minmax(4.25rem, 0.34fr) minmax(0, 1fr);
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .portfolio-metric strong {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .portfolio-metric span {
+    text-align: left;
   }
 
   .github-terminal-body {
