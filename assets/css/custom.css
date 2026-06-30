@@ -635,6 +635,18 @@ samp {
   width: var(--value, 20%);
 }
 
+.ai-test-header {
+  background: var(--portfolio-accent-fill);
+  border-radius: 6px;
+  color: #111827;
+  display: block;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 3rem;
+  padding: 0.9rem 1rem;
+  text-align: center;
+}
+
 @media (max-width: 991px) {
   .portfolio-metrics,
   .github-stats,
