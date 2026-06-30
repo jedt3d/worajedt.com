@@ -3,6 +3,15 @@ body {
   font-family: var(--font-primary);
 }
 
+:root {
+  --portfolio-accent-fill: #ffd400;
+  --portfolio-accent-text: #ffd400;
+}
+
+.dark {
+  --portfolio-accent-text: #ffd400;
+}
+
 h1,
 h2,
 h3,
@@ -26,6 +35,16 @@ samp {
   justify-content: center;
 }
 
+.btn-primary,
+.dark .btn-primary {
+  color: var(--color-text-dark);
+}
+
+.btn-primary:hover,
+.dark .btn-primary:hover {
+  color: var(--color-text-dark);
+}
+
 .portfolio-logo {
   color: var(--color-text-dark);
   display: inline-block;
@@ -36,7 +55,7 @@ samp {
 }
 
 .portfolio-logo span {
-  color: var(--color-primary);
+  color: var(--portfolio-accent-text);
 }
 
 .dark .portfolio-logo {
@@ -48,7 +67,7 @@ samp {
 }
 
 .portfolio-eyebrow {
-  color: var(--color-primary);
+  color: var(--portfolio-accent-text);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -61,6 +80,7 @@ samp {
 }
 
 .portfolio-subtitle a {
+  color: var(--portfolio-accent-text);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
@@ -130,7 +150,7 @@ samp {
 }
 
 .portfolio-image-credit a:hover {
-  color: var(--color-primary);
+  color: var(--portfolio-accent-text);
 }
 
 .dark .portfolio-image-credit {
@@ -155,7 +175,7 @@ samp {
 }
 
 .portfolio-metric strong {
-  color: var(--color-primary);
+  color: var(--portfolio-accent-text);
   display: block;
   font-family: var(--font-secondary);
   font-size: clamp(2rem, 4vw, 3.25rem);
@@ -195,7 +215,7 @@ samp {
 }
 
 .portfolio-period {
-  color: var(--color-primary);
+  color: var(--portfolio-accent-text);
   font-weight: 700;
   margin-bottom: 0.35rem;
 }
@@ -211,7 +231,7 @@ samp {
 }
 
 .photo-camera-note {
-  border-left: 3px solid var(--color-primary);
+  border-left: 3px solid var(--portfolio-accent-fill);
   color: var(--color-text-light);
   padding-left: 1rem;
 }
@@ -269,33 +289,33 @@ samp {
 .portfolio-github {
   background:
     linear-gradient(180deg, rgba(6, 19, 23, 0.98), rgba(10, 25, 30, 0.96)),
-    repeating-linear-gradient(90deg, rgba(94, 234, 212, 0.05) 0 1px, transparent 1px 48px);
-  color: #d6fff5;
+    repeating-linear-gradient(90deg, rgba(255, 212, 0, 0.06) 0 1px, transparent 1px 48px);
+  color: #fff9d0;
   overflow: hidden;
 }
 
 .portfolio-github h2,
 .portfolio-github .portfolio-eyebrow {
-  color: #5eead4;
+  color: #ffd400;
 }
 
 .portfolio-github p {
-  color: #b7cfc9;
+  color: #d7d0b8;
 }
 
 .portfolio-github .btn-outline-primary {
-  border-color: rgba(94, 234, 212, 0.55);
-  color: #d6fff5;
+  border-color: rgba(255, 212, 0, 0.55);
+  color: #fff9d0;
 }
 
 .portfolio-github .btn-outline-primary:hover {
-  background: #5eead4;
+  background: #ffd400;
   color: #061317;
 }
 
 .github-terminal {
   background: rgba(4, 12, 15, 0.92);
-  border: 1px solid rgba(94, 234, 212, 0.24);
+  border: 1px solid rgba(255, 212, 0, 0.26);
   border-radius: 8px;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -304,7 +324,7 @@ samp {
 .github-terminal-bar {
   align-items: center;
   background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(94, 234, 212, 0.18);
+  border-bottom: 1px solid rgba(255, 212, 0, 0.18);
   display: flex;
   gap: 0.55rem;
   padding: 0.85rem 1rem;
@@ -341,7 +361,7 @@ samp {
 }
 
 .github-terminal-bar code {
-  color: #9af8e7;
+  color: #ffd400;
   font-size: 0.85rem;
   margin-left: 0.4rem;
 }
@@ -358,12 +378,12 @@ samp {
 }
 
 .github-command-line span {
-  color: #5eead4;
+  color: #ffd400;
   font-weight: 700;
 }
 
 .github-command-line code {
-  color: #d6fff5;
+  color: #fff9d0;
   font-size: 0.92rem;
 }
 
@@ -381,7 +401,7 @@ samp {
 }
 
 .github-stats strong {
-  color: #5eead4;
+  color: #ffd400;
   display: block;
   font-family: var(--font-secondary);
   font-size: clamp(1.65rem, 3vw, 2.5rem);
@@ -390,15 +410,15 @@ samp {
 }
 
 .github-stats span {
-  color: #b7cfc9;
+  color: #d7d0b8;
   display: block;
   font-size: 0.9rem;
 }
 
 .github-widget-status {
-  border: 1px solid rgba(94, 234, 212, 0.18);
+  border: 1px solid rgba(255, 212, 0, 0.18);
   border-radius: 8px;
-  color: #9af8e7;
+  color: #ffd400;
   font-size: 0.82rem;
   margin-bottom: 1.25rem;
   padding: 0.65rem 0.8rem;
@@ -418,12 +438,12 @@ samp {
 }
 
 .github-section-title span {
-  color: #f5fffc;
+  color: #fff9d0;
   font-weight: 700;
 }
 
 .github-section-title small {
-  color: #78958f;
+  color: #b9ab69;
   font-size: 0.78rem;
 }
 
@@ -444,7 +464,7 @@ samp {
 }
 
 .github-months span {
-  color: #8fb2aa;
+  color: #b9ab69;
   font-size: 0.72rem;
   min-height: 1rem;
 }
@@ -456,7 +476,7 @@ samp {
 }
 
 .github-weekdays {
-  color: #8fb2aa;
+  color: #b9ab69;
   display: grid;
   font-size: 0.72rem;
   gap: 3px;
@@ -475,7 +495,7 @@ samp {
 
 .github-cell,
 .github-legend i {
-  background: #142226;
+  background: #19150a;
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 3px;
   display: block;
@@ -485,22 +505,22 @@ samp {
 
 .github-cell[data-level="1"],
 .github-legend i[data-level="1"] {
-  background: #134e4a;
+  background: #5f4b00;
 }
 
 .github-cell[data-level="2"],
 .github-legend i[data-level="2"] {
-  background: #0f766e;
+  background: #9a7700;
 }
 
 .github-cell[data-level="3"],
 .github-legend i[data-level="3"] {
-  background: #14b8a6;
+  background: #d8aa00;
 }
 
 .github-cell[data-level="4"],
 .github-legend i[data-level="4"] {
-  background: #5eead4;
+  background: #ffd400;
 }
 
 .github-cell.is-future {
@@ -509,7 +529,7 @@ samp {
 
 .github-legend {
   align-items: center;
-  color: #8fb2aa;
+  color: #b9ab69;
   display: flex;
   gap: 0.38rem;
   justify-content: flex-end;
@@ -531,7 +551,7 @@ samp {
 .github-repo-row {
   align-items: center;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(94, 234, 212, 0.15);
+  border: 1px solid rgba(255, 212, 0, 0.16);
   border-radius: 8px;
   display: flex;
   gap: 0.75rem;
@@ -540,7 +560,7 @@ samp {
 }
 
 .github-repo-row:hover {
-  border-color: rgba(94, 234, 212, 0.55);
+  border-color: rgba(255, 212, 0, 0.62);
 }
 
 .github-repo-row strong,
@@ -549,22 +569,22 @@ samp {
 }
 
 .github-repo-row strong {
-  color: #f5fffc;
+  color: #fff9d0;
   margin-bottom: 0.05rem;
 }
 
 .github-repo-row small {
-  color: #a7c3bd;
+  color: #d7d0b8;
   font-size: 0.86rem;
 }
 
 .github-repo-meta {
-  color: #78958f !important;
+  color: #b9ab69 !important;
   margin-top: 0.1rem;
 }
 
 .github-repo-row em {
-  color: #5eead4;
+  color: #ffd400;
   flex: 0 0 auto;
   font-size: 0.78rem;
   font-style: normal;
@@ -584,7 +604,7 @@ samp {
 
 .github-language-row span,
 .github-event-row span {
-  color: #d6fff5;
+  color: #fff9d0;
   display: flex;
   font-size: 0.84rem;
   justify-content: space-between;
@@ -592,7 +612,7 @@ samp {
 
 .github-language-row small,
 .github-event-row small {
-  color: #78958f;
+  color: #b9ab69;
 }
 
 .github-language-row b,
@@ -607,7 +627,7 @@ samp {
 
 .github-language-row b::after,
 .github-event-row b::after {
-  background: linear-gradient(90deg, #0f766e, #5eead4);
+  background: linear-gradient(90deg, #6f5300, #ffd400);
   border-radius: inherit;
   content: "";
   display: block;
